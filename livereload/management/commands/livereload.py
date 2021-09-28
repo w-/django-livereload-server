@@ -21,6 +21,7 @@ class Command(BaseCommand):
             '--ignore-file-extensions',
             dest='ignore-file-extensions',
             action='store',
+            default='',
             help='File extensions to ignore',
         )
         parser.add_argument(

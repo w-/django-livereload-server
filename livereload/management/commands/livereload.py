@@ -3,7 +3,7 @@ import itertools
 from django.conf import settings
 from django.apps import apps
 from django.core.management.base import BaseCommand
-from ... import livereload_port, server as S, livereload_host
+from ... import livereload_listen_addr, livereload_port, server as S, livereload_host
 
 
 class Command(BaseCommand):
@@ -25,7 +25,7 @@ class Command(BaseCommand):
             help='File extensions to ignore',
         )
         parser.add_argument(
-            '--host', dest='host', default=livereload_host(), help='Host address for livereload sever.'
+            '--host', dest='host', default=livereload_listen_addr(), help='Interface to listen on for livereload sever.'
         )
         parser.add_argument(
             '--port', dest='port', default=livereload_port(), help='Listening port for livereload sever.'

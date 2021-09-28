@@ -10,7 +10,7 @@ try:
 except ImportError:
     MiddlewareMixin = object
 
-from livereload import livereload_listen_addr, livereload_port, livereload_host
+from livereload import livereload_port, livereload_host
 
 
 class LiveReloadScript(MiddlewareMixin):
@@ -36,7 +36,7 @@ class LiveReloadScript(MiddlewareMixin):
 
         script = soup.new_tag(
             'script', src='http://%s:%d/livereload.js' % (
-                livereload_listen_addr(),
+                livereload_host(),
                 livereload_port(),
             )
         )

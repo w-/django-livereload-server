@@ -13,6 +13,12 @@ def livereload_port():
     return int(getattr(settings, 'LIVERELOAD_PORT', 35729))
 
 
+def livereload_listen_addr():
+    from django.conf import settings
+    return getattr(settings, 'LIVERELOAD_LISTEN_ADDRESS', '127.0.0.1')
+
+
 def livereload_host():
     from django.conf import settings
     return getattr(settings, 'LIVERELOAD_HOST', '127.0.0.1')
+
